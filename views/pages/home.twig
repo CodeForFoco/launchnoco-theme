@@ -1,0 +1,176 @@
+{% extends 'base.twig' %}
+
+{%  block page %}
+    {%  if home_slides %}
+    <section class='home-slider-wrapper'>
+        <div class='home-slider'>
+            {%  for slide in home_slides %}
+                <div class="home-slide" style="background-image:url({{ slide.thumbnail.src }}); background-size: cover; background-repeat: no-repeat; background-position: bottom">
+                    <div class='slide-content'>
+                        {%  if slide.title %}
+                            <div class="title-wrapper">
+                                <div class="display-4 inner">
+                                    <span class='title'>{{ slide.title }}</span>
+                                </div>
+                            </div>
+                        {% endif %}
+
+                        {%  if slide.content %}
+                        <div class='body'>
+                            {{ slide.content }}
+                        </div>
+                        {%  endif %}
+                        <div class="footer">
+                            {%  if slide._awesome_slide_details_url %}
+                                <a class="read-more btn btn-primary" href="{{ slide._awesome_slide_details_url }}">
+                                    {{ slide._awesome_slide_details_button_text ? slide._awesome_slide_details_button_text : 'READ MORE' }}
+                                    <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                                </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {%  endfor %}
+        </div>
+    </section>
+    {%  endif %}
+
+    <section class="profile-section">
+        <div class="container py-5">
+            <div class="wrapper">
+                <div class="row align-items-center">
+                    <div class="col-sm-8 col-sl-9">
+                        <h2 class="h1 title">The Crucible Ethics</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio vitae maiores laboriosam saepe aliquid quisquam rem sed, enim ea atque? Natus iure autem cumque, quaerat distinctio pariatur velit illo hic a eos accusamus deleniti totam repellendus reiciendis, nobis vero sapiente similique tempore dolorem nesciunt officia facere perspiciatis fugiat? Sapiente accusamus repudiandae architecto corporis aspernatur. Eligendi, accusamus quas mollitia. Obcaecati nam provident molestias aut aperiam qui ut similique odit natus nihil.
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio vitae maiores laboriosam saepe aliquid quisquam rem sed, enim ea atque? Natus iure autem cumque, quaerat distinctio pariatur velit illo hic a eos accusamus deleniti totam repellendus reiciendis, nobis vero sapiente similique tempore dolorem nesciunt officia facere perspiciatis fugiat? Sapiente accusamus repudiandae architecto corporis aspernatur. Eligendi, accusamus quas mollitia. Obcaecati nam provident molestias aut aperiam qui ut similique odit natus nihil.
+                        </p>
+                        <div class="section-links">
+                            <ul class="links">
+                                <li class="link">
+                                    <a href="#">Link One</a>
+                                </li>
+                                <li class="link">
+                                    <a href="#">Link Two</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-4 col-sl-3">
+                        <img class="img-fluid" src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2016/02/03/20/pg-24-pope-francis-getty.jpg" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-gray portfolio-section">
+        <div class="py-4 container">
+            <div class="py-4 wrapper">
+                <header class="">
+                    <h2 class="title display-4">Our Portfolio</h2>
+                    <p class="secondary">Crucible brain children.</p>
+                </header>
+                <div class="portfolio">
+                    <div class="row items">
+                        {%  for post in portfolio %}
+                            <div class="col-6 col-sm-4 col-xl-3 col-sl-2 item-wrapper">
+                                <div class="item">
+                                    <header class="row">
+                                        <div class="col-4 thumbnail-wrapper">
+                                            <img class="img-fluid" src="{{ post.thumbnail.src | letterbox(120, 120, '#FFF') }}" />
+                                        </div>
+                                        <div class="col-8">
+                                            <h4 class="title">{{ post.title }}</h4>
+                                            <h6 class="secondary title">Subtitle can go here</h6>
+                                        </div>
+                                    </header>
+
+                                    <div class="content">
+                                        <p class="m-0 excerpt">{{ post.post_excerpt }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        {%  endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {%  if posts %}
+    <section class="recent-posts-section">
+        <div class="container">
+            <div class="py-5 wrapper">
+                <header>
+                    <h2 class="title display-4">
+                        Crucible Blog
+                    </h2>
+                    <p class="secondary">Insight reports and articles on venture capitalism in emerging markets</p>
+                </header>
+                <div class="py-2">
+                    <div class="recent-posts">
+                        <div class="posts">
+                            {%  for post in posts %}
+                            <div id="post-{{ post.ID }}" class="post-wrapper">
+                                <div class="post">
+                                    <div class="card">
+                                        {%  if post.thumbnail %}
+                                        <div class="thumbnail-wrapper">
+                                            <a href="{{ post.link }}">
+                                                <img src="{{ post.thumbnail.src | resize(600,400) }}" class="img-fluid" />
+                                            </a>
+                                        </div>
+                                        {%  else %}
+                                        <a class="color-block" href="{{ post.link }}">
+
+                                        </a>
+                                        {% endif %}
+                                        <div class="card-header">
+                                            {%  if post.thumbnail %}
+                                                <h3 class="title">
+                                                    <a href="{{ post.link }}">
+                                                        {{ post.title }}
+                                                    </a>
+                                                </h3>
+                                            {%  else %}
+                                                <h2 class="title">
+                                                    <a href="{{ post.link }}">
+                                                        {{ post.title }}
+                                                    </a>
+                                                </h2>
+                                            {% endif %}
+                                            <div class="metas">
+                                                <div class="meta">
+                                                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                                    <span class="value">
+                                                        {{ post.date | date }}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-content">
+                                            <div class="metas">
+
+                                            </div>
+                                            <div class="excerpt">
+                                                {{ post.get_preview(25) }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {%  endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {%  endif %}
+
+
+{% endblock %}

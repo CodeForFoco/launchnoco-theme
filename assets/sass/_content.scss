@@ -1,0 +1,172 @@
+#content{
+  flex: 1;
+
+  > section{ background: $brand-white; border-bottom: solid 1px $border-color;
+    // border-bottom: solid 4px $brand-primary;
+
+    &:nth-of-type(even){
+      // background: $brand-white;
+    }
+
+    &:nth-of-type(odd){
+      // background: $gray-lightest; box-shadow: 0 -1px 1px 0 rgba($brand-black, 0.125%) inset, 0 1px 1px 0 rgba($brand-black, 0.125%) inset;
+    }
+
+    .section-links{
+      margin: $padding 0;
+
+      .links{
+        margin: 0; padding: 0;
+        .link{
+          list-style: bnone; display: inline-block;
+
+          &:not(:last-of-type){
+            margin-right: $padding;
+          }
+
+          a{
+            padding: $padding; border-top: solid 1px $brand-black; border-bottom: solid 1px $brand-black; color: $body-color;
+
+            &:hover{
+              color: $link-color;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .content-inner{
+    display: flex; flex-wrap: nowrap; flex-direction: row; flex: 0 0 100%; max-width: 100%; width: 100%; position: relative; background: $brand-white;
+
+    > .mobile-sidebar-trigger{
+      position: absolute; right: 0; top: 0; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; z-index: 10; //box-shadow: -1px 0 2px 0 rgba($brand-black, 0.25), 0 1px 1px 0 rgba($brand-black, 0.115);
+    }
+
+    @include media-breakpoint-down(sm) {
+      &.sidebar-expanded {
+        &:before {
+          content: '';  position: absolute;  top: 0;  left: 0;  width: 100%;  height: 100%;  background: $white-faded;  z-index: 2;  transition: all ease-in-out 0.115s;
+        }
+        .mobile-sidebar-trigger {
+          .fa {
+            &:before {
+              content: '\f101';
+            }
+          }
+        }
+      }
+    }
+
+    > .content{
+      min-height: 440px;  overflow: hidden;
+
+      @include media-breakpoint-up(md){
+        flex: 0 0 calc(100% - 350px); max-width: calc(100% - 350px);
+      }
+    }
+
+    .metas{
+      margin-top: auto;
+
+      .meta{
+        font-size: 0.77rem;
+
+        &:not(:last-child){
+          margin-right: $padding;
+        }
+      }
+    }
+  }
+
+
+
+  .card{
+    background: $brand-white; position: relative; z-index: 1; border: none; padding: 0; display: flex; flex-direction: column; //padding: $padding*1 $padding*2 $padding*2 $padding*1;
+
+    .color-block{
+      flex: 1;
+
+      &:nth-child(2n+1){
+        width: 100%; height: 234px; background: $brand-accent;
+      }
+    }
+    .card-header{
+      border: none; // border: solid 4px $border-color; border-left: none; border-right: none;
+      background: $white-faded; height: 118px;  padding: $padding 0; margin-top: $padding; display: flex; align-items: center; flex-direction: column;
+
+      > *{
+        width: 100%;
+      }
+
+      .title{
+        > a > *{
+          display: inline; vertical-align: middle;
+        }
+      }
+
+      h2.title {
+        font-size: 2.65rem;
+      }
+    }
+
+    a{
+      color: $body-color; transition: all ease-in-out 0.115s;
+
+      &:hover{
+        color: $link-hover-color;
+      }
+    }
+
+    &:before{
+      // content: ' '; position: absolute; z-index: -1; width: 100%; height: 100%; left: 0; top: 0; background-color: $brand-white; background-repeat: no-repeat; background-position: bottom right;
+    }
+  }
+
+
+
+  // Slick Slidder
+  .slick-slider {
+    display: flex; align-items: center;
+
+    .slick-list{
+      align-self: flex-start;
+    }
+
+    .slick-track {
+      display: flex;
+
+      .slick-slide {
+        display: flex;  height: auto;
+      }
+    }
+  }
+
+  .slider-control{
+    display: inline-flex; padding: $padding $padding*1.225; background-color: $white-faded; position: absolute; z-index: 5; transition: all ease-in-out 0.115s;
+
+    &.left{
+      left: $padding;
+    }
+
+    &.right{
+      right: $padding;
+    }
+
+    &:hover{
+      cursor: pointer; background-color: $brand-white;
+    }
+  }
+}
+
+.bg-white{
+  background: $brand-white;
+}
+
+.bg-black{
+  background: $brand-black;
+}
+
+.bg-gray{
+  background: lighten($gray-lightest, 1%) !important;
+}

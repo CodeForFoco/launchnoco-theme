@@ -1,0 +1,77 @@
+body.page:not(.home),
+body.blog,
+body.archive.category,
+body.archive.tag,
+body.single-post,
+body.archive.author,
+body.search{
+  #content{
+    padding-top: 40px; padding-bottom: 40px;
+
+    .page-header{
+      padding: $padding*2 $padding; background: $brand-white; margin-bottom: $padding*2;
+
+      .page-title{
+          @include media-breakpoint-down(sm){
+            font-size: 3.5rem;
+          }
+      }
+
+      .subtitle{
+        color: $gray-light; text-transform: uppercase; letter-spacing: 2px; word-spacing: 3px;
+      }
+
+      .breadcrumbs-wrapper {
+        padding-top: $padding; border-top: solid 4px $brand-primary; margin-top: $padding;
+
+        #breadcrumbs {
+          font-size: .88rem; overflow-x: auto; white-space: nowrap;
+
+          @include media-breakpoint-up(md){
+            font-size: 1rem;
+          }
+
+          > * {
+            padding: 0;  margin: 0;
+
+            > * {
+              display: flex;  flex-direction: row;  align-items: center; flex-wrap: nowrap;
+
+              > * {
+                display: inline-flex; flex-direction: row;  align-items: center; flex-wrap: nowrap;
+
+                &:not(:last-child):after{
+                  content: ' '; width: 2px; background: $border-color; height: 100%; margin: 0 $padding/1.45; align-self: flex-end; vertical-align: bottom; height: 20px; transform: rotate(11deg);
+                }
+
+                *{
+                  display: inline-flex; flex-direction: row;  align-items: center; flex-wrap: nowrap;
+
+                  &:not(:last-child):after{
+                    content: ' '; width: 2px; background: $border-color; height: 100%; margin: 0 $padding/1.45; align-self: flex-end; vertical-align: bottom; height: 20px; transform: rotate(11deg);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .content-inner{
+      .content {
+        padding: $padding*2;
+
+        .content-wrapper {
+          .article-content {
+            > header {
+              .title {
+                border-bottom: solid 4px $border-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

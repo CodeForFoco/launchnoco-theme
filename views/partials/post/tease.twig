@@ -1,0 +1,32 @@
+{% extends "partials/tease.twig" %}
+
+{% block content %}
+	<div class="thumbnail-wrapper">
+        {% if post.thumbnail.src %}
+		<a href="{{post.link}}" title="read full article">
+			<img src="{{post.thumbnail.src|resize(1200,800)}}" class="img-fluid" />
+		</a>
+        {% endif %}
+	</div>
+
+	 <div class="content">
+		<div class="row">
+			<div class="col-llg-4 col-ssl-3">
+				<h3 class="post-title">
+					<a href="{{post.link}}">{{post.title}}</a>
+				</h3>
+                {%  include 'partials/post/metas.twig' with { metas:[  'date', 'terms', '']} %}
+				<div class="hidden-lg-down read-more-wrapper d-flex align-content-start">
+					<a href="{{ post.link }}" class="btn btn-lg btn-outline-primary" title="read full article">
+						READ FULL ARTICLE
+					</a>
+				</div>
+			</div>
+			<div class="col-llg-8 col-ssl-9">
+				<p>
+                    {{post.get_preview(60, '', '')}}
+				</p>
+			</div>
+		</div>
+	</div>
+{% endblock %}

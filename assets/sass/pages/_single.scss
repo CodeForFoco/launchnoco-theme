@@ -1,0 +1,33 @@
+body.single{
+  #content{
+    .content-wrapper{
+      > article{
+        > section{
+          margin-bottom: $padding*6;
+
+          &.comment-box{
+            // border-top: solid 4px $border-color; padding-top: $padding*2.45;
+
+            .comments{
+
+            }
+
+            #commentform{
+              .comment-form-author,
+              .comment-form-email{
+                .required{
+                  clear: right;
+                }
+
+                input{
+                  display: block; width: 100%; border: solid 4px $border-color;
+                }
+              }
+
+            }
+          }
+        }
+      }
+    }
+  }
+}

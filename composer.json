@@ -1,0 +1,29 @@
+{
+  "name": "greg-benson-trust/crucible-quest-theme",
+  "description": "Custom WordPress Theme Developed for Greg Benson Trust",
+  "type":"wordpress-theme",
+  "minimum-stability" : "stable",
+  "authors": [
+    {
+      "name": "RADD Creative",
+      "email": "developer@raddcreative.com"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
+  "extra": {
+    "installer-paths": {
+      "../../plugins/{$name}/": [
+        "wpackagist-plugin/*",
+        "type:wordpress-plugin"
+      ]
+    }
+  },
+  "require": {
+
+  }
+}

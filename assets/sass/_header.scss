@@ -1,0 +1,64 @@
+#header{
+  background: $brand-white;
+
+  .wrapper{
+    align-items: center;
+
+    > *{
+      display: inline-flex; flex: 0 1 auto;
+    }
+
+    > .hdr-logo{
+
+    }
+
+    .nav-wrapper{
+      display: flex; justify-content: flex-end;
+    }
+
+    #nav-primary{
+      > ul{
+        padding: 0; margin: 0;
+
+        //display: flex; flex-direction: row; justify-content: flex-end;
+        // all descendants
+        li{
+          list-style: none; display: inline-block;
+
+          a{
+            padding: $padding $padding/4; color: $body-color; transition: all ease-in-out 0.115s;
+
+            @include media-breakpoint-up(sm){
+              padding: $padding $padding;
+            }
+
+            &:hover{
+              color: $brand-primary;
+            }
+          }
+
+          &.current-menu-item{
+            a{
+              color: $brand-primary;
+            }
+          }
+        }
+
+        // first level
+        > li{
+          &:not(:first-child){
+            margin-left: $padding;
+          }
+        }
+      }
+    }
+  }
+
+  a{
+    color: $body-color;
+
+    &:hover{
+      color: $brand-primary;
+    }
+  }
+}

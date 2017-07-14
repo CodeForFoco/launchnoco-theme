@@ -1,0 +1,32 @@
+/*!
+ * Theme Name: Make It
+ * Description: Custom WordPress Theme Developed for Greg Benson Trust
+ * Author: RADD Creative
+*/
+@import 'variables';
+
+/*--------------------------------------------------------------
+# Load Vendors
+--------------------------------------------------------------*/
+@import "vendor";
+
+/*--------------------------------------------------------------
+# Primary Styles
+--------------------------------------------------------------*/
+@import 'mixins/mixins';
+
+@import 'animations';
+
+@import 'fonts';
+
+@import 'elements';
+
+@import 'header';
+@import 'content';
+@import 'sidebar';
+@import 'footer';
+
+@import 'widgets/widgets';
+
+@import 'pages/pages';
+

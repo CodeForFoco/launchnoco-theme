@@ -1,0 +1,17 @@
+body.blog,
+body.archive.category,
+body.archive.tag{
+  #content{
+    .posts-content{
+      article{
+        margin-bottom: $padding*1.2;
+
+        &.no-thumbnail{
+          &:not(:first-child) {
+            border-top: solid 4px $border-color;  padding-top: $padding;
+          }
+        }
+      }
+    }
+  }
+}

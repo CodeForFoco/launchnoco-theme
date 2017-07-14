@@ -1,0 +1,66 @@
+////
+// Colors
+//
+$brand-white: #FFF;
+$brand-black: #242424;
+$brand-primary: #b02323; //lighten(#8a1b1b, 9%);
+$brand-accent: #00b19e;
+$brand-info: $brand-accent;
+
+// Create grayscale
+$gray-dark:                 #292b2c !default;
+$gray:                      #464a4c !default;
+$gray-light:                #636c72 !default;
+$gray-lighter:              #eceeef !default;
+$gray-lightest:             #f7f7f9 !default;
+
+$white-faded: rgba($brand-white, 0.75);
+$border-color: #ebebf0;
+
+$grid-gutter-width:         22px;
+$padding: $grid-gutter-width / 2;
+
+$grid-breakpoints: (
+  // Extra small screen / phone
+        xs: 0,
+  // Small screen / phone
+        sm: 720px,
+  // Medium screen / tablet
+        md: 980px,
+        mmd: 1080px,
+  // Large screen / desktop
+  //lg: 1400px,
+        lg: 1180px,
+  // Extra large screen / wide desktop
+        llg: 1280px,
+  // Extra large screen / wide desktop
+        xl: 1480px,
+  //Larger
+        xxl: 1680px,
+  //Very Large
+        sl: 1880px,
+  //Very Large
+        ssl: 2080px
+) !default;
+
+$container-max-widths: (
+        sm:  720px,
+        md:  940px+$grid-gutter-width,
+        mmd: 1020px+$grid-gutter-width,
+        lg:  1100px+$grid-gutter-width,
+        llg: 1200px+$grid-gutter-width,
+        xl:  1400px+$grid-gutter-width,
+        xxl: 1600px+$grid-gutter-width,
+        sl:  1800px+$grid-gutter-width,
+        ssl: 2000px+$grid-gutter-width
+);
+
+$link-color: $brand-primary;
+$link-hover-color: darken($brand-primary, 11%);
+$link-hover-decoration: none;
+$link-focus: none;
+
+$fa-font-path: 'assets/fonts';
+$border-radius: 2px;
+$border-radius-lg: $border-radius;
+$btn-border-radius: $border-radius;

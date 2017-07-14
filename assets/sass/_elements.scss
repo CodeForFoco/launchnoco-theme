@@ -1,0 +1,35 @@
+body,html{
+  background: $gray-lightest; height: 100%; width: 100%;
+}
+
+body{
+  display: flex; flex-direction: column;
+}
+
+a{
+  display: inline-block;
+}
+
+hr{
+  border-top: solid 4px $border-color;
+}
+
+input,a{
+  &:hover,&:active,&:focus{
+    outline: none; box-shadow: none;
+  }
+}
+
+input{
+  height: 44px;
+
+  &[type=submit]{
+    &:hover{
+      cursor: pointer;
+    }
+  }
+
+  &:active,&:focus{
+    border-color: $brand-primary;
+  }
+}
