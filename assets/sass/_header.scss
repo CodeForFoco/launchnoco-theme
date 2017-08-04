@@ -8,22 +8,63 @@
       display: inline-flex; flex: 0 1 auto;
     }
 
-    > .hdr-logo{
-
-    }
-
     .nav-wrapper{
-      display: flex; justify-content: flex-end;
+      display: flex; justify-content: center;
+      
+      @include media-breakpoint-up(md){
+        justify-content: flex-end;
+      }
     }
 
     #nav-primary{
+      position: relative; width: 100%; text-align: center;
+      
+      .mobile-menu-trigger{
+        display: block; width: 40%; margin-left: auto; margin-right: auto; padding: $padding/2; transition: all ease-in-out 0.115s;
+        
+        &:hover{
+          background: $brand-accent; color: $brand-white; cursor: pointer;
+        }
+      }
+      
+      &.expanded{
+        .mobile-menu-trigger{
+          background: $brand-accent; color: $brand-white; padding: $padding/2;
+        }
+      }
+      
+      @include media-breakpoint-down(sm){
+        z-index: 5; overflow: hidden;
+        
+        ul{
+          background: $brand-accent; color: $brand-white; max-height: 0;
+          
+          li{
+            a{
+              display: block; color: $brand-white !important;
+              
+              &:hover{
+                color: $link-hover-color !important;
+              }
+            }
+          }
+        }
+      }
+      
       > ul{
-        padding: 0; margin: 0;
-
-        //display: flex; flex-direction: row; justify-content: flex-end;
+        padding: 0; margin: 0; position: absolute; width: 80%; left: 10%; text-align: left; 
+        
+        @include media-breakpoint-up(md){
+          width: 100%;
+        }
+        
         // all descendants
         li{
-          list-style: none; display: inline-block;
+          list-style: none; display: block;
+          
+          @include media-breakpoint-up(md){
+            display: inline-block;
+          }
 
           a{
             padding: $padding $padding/4; color: $body-color; transition: all ease-in-out 0.115s;

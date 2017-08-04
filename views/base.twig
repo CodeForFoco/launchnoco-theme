@@ -11,18 +11,22 @@
 			{% block header %}
 				<div class="container">
 					<div class="row wrapper">
-						<div class="col-3 col-xl-2 col-ssl-1 logo-wrapper">
+						<div class="col-md-2 col-ssl-1 logo-wrapper">
 							<h1 class="hdr-logo" role="banner">
 								<a class="hdr-logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>
 							</h1>
 						</div>
 
-						<div class="col-9 col-xl-10 col-ssl-11 nav-wrapper">
-                            {%  if menu.primary %}
-								<nav id="nav-primary" class="nav-main" role="navigation">
-                                    {% include "partials/menu/primary.twig" with {'menu': menu.primary.get_items} %}
-								</nav><!-- #nav -->
-                            {%  endif %}
+						<div class="col-md-10 col-ssl-11 nav-wrapper">
+              {%  if menu.primary %}
+							<nav id="nav-primary" class="nav-main" role="navigation">
+								<span class='mobile-menu-trigger'>
+									<i class="fa fa-bars" aria-hidden="true"></i>
+									<span>menu</span>
+								</span>
+                {% include "partials/menu/primary.twig" with {'menu': menu.primary.get_items} %}
+							</nav><!-- #nav -->
+              {%  endif %}
 						</div>
 					</div>
 				</div>

@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*!
  * Theme Name: Make It
- * Description: Custom WordPress Theme
+ * Description: Custom WordPress Theme Developed for Greg Benson Trust
  * Author: RADD Creative
 */
 /*--------------------------------------------------------------
@@ -15935,18 +15935,87 @@ input:active, input:focus {
 #header .wrapper .nav-wrapper {
   display: -webkit-box;
   display: flex;
-  -webkit-box-pack: end;
-  justify-content: flex-end;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+
+@media (min-width: 980px) {
+  #header .wrapper .nav-wrapper {
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+  }
+}
+
+#header .wrapper #nav-primary {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+#header .wrapper #nav-primary .mobile-menu-trigger {
+  display: block;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5.5px;
+  transition: all ease-in-out 0.115s;
+}
+
+#header .wrapper #nav-primary .mobile-menu-trigger:hover {
+  background: #00b19e;
+  color: #FFF;
+  cursor: pointer;
+}
+
+#header .wrapper #nav-primary.expanded .mobile-menu-trigger {
+  background: #00b19e;
+  color: #FFF;
+  padding: 5.5px;
+}
+
+@media (max-width: 979px) {
+  #header .wrapper #nav-primary {
+    z-index: 5;
+    overflow: hidden;
+  }
+  #header .wrapper #nav-primary ul {
+    background: #00b19e;
+    color: #FFF;
+    max-height: 0;
+  }
+  #header .wrapper #nav-primary ul li a {
+    display: block;
+    color: #FFF !important;
+  }
+  #header .wrapper #nav-primary ul li a:hover {
+    color: #811a1a !important;
+  }
 }
 
 #header .wrapper #nav-primary > ul {
   padding: 0;
   margin: 0;
+  position: absolute;
+  width: 80%;
+  left: 10%;
+  text-align: left;
+}
+
+@media (min-width: 980px) {
+  #header .wrapper #nav-primary > ul {
+    width: 100%;
+  }
 }
 
 #header .wrapper #nav-primary > ul li {
   list-style: none;
-  display: inline-block;
+  display: block;
+}
+
+@media (min-width: 980px) {
+  #header .wrapper #nav-primary > ul li {
+    display: inline-block;
+  }
 }
 
 #header .wrapper #nav-primary > ul li a {
